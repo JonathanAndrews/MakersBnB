@@ -1,0 +1,27 @@
+{
+  "name": "makersbnb",
+  "version": "1.0.0",
+  "description": "\"\"",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/ spec/", 
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanAndrews/MakersBnB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanAndrews/MakersBnB/issues"
+  },
+  "homepage": "https://github.com/JonathanAndrews/MakersBnB#readme",
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "grunt": "^1.0.3",
+    "jasmine-node": "^1.16.2"
+  }
+}
