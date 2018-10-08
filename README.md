@@ -1,3 +1,3 @@
 # MakersBnB
 ### Something Witty Team
-[Alex Kharouk]()
+[Alex Kharouk](), [Johnathan Andrews]()
