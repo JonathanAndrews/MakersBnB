@@ -2,5 +2,8 @@
     "extends": "airbnb-base",
     "env": {
       "jasmine": true
+    },
+    "rules": {
+      "func-names":"off"
     }
 }
