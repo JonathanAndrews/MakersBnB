@@ -15,13 +15,8 @@ describe('User visits home page', () => {
 
   describe('submits sign up form', () => {
     beforeEach((done) => {
-<<<<<<< HEAD
       browser.fill('sign-up-email', 'jon@email.com');
       browser.fill('sign-up-password', 'parkrunlover');
-=======
-      browser.fill('email', 'jon@email.com');
-      browser.fill('password', 'parkrunlover');
->>>>>>> master
       browser.pressButton('Sign Up', done);
     });
 
@@ -30,11 +25,7 @@ describe('User visits home page', () => {
     });
 
     it('should welcome user', () => {
-<<<<<<< HEAD
       browser.assert.text('h1', 'Hello jon@email.com');
-=======
-      browser.assert.text('body', 'Hello jon@email.com');
->>>>>>> master
     });
   });
 });
