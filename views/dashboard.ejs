@@ -1,4 +1,13 @@
 
 <% include partials/header %>
-<h1 id="greeting">Hello <%= email %></h1>
+<h1>Hello <%= email %></h1>
+<ul>
+  <% let num = 1 %>
+  <% listings.forEach(function(listing) { %>
+    <li class="listing-<%= num %>">
+      <span class="listing-<%= num %>-name"><%= listing.name %></span> - <%= listing.description %> - <a href="/listing/<%=listing.id%>" class="listing-<%= num %>">Book Now</a>
+    </li>
+    <% num++ %> 
+  <% }) %>
+</ul>
 <% include partials/footer %>
