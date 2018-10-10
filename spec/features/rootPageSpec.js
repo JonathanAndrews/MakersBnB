@@ -25,7 +25,7 @@ describe('User visits home page', () => {
     });
 
     it('should welcome user', () => {
-      browser.assert.text('body', 'Hello jon@email.com');
+      browser.assert.text('h1', 'Hello jon@email.com');
     });
   });
 });
