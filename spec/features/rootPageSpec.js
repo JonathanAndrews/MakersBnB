@@ -15,8 +15,8 @@ describe('User visits home page', () => {
 
   describe('submits sign up form', () => {
     beforeEach((done) => {
-      browser.fill('email', 'jon@email.com');
-      browser.fill('password', 'parkrunlover');
+      browser.fill('sign-up-email', 'jon@email.com');
+      browser.fill('sign-up-password', 'parkrunlover');
       browser.pressButton('Sign Up', done);
     });
 
