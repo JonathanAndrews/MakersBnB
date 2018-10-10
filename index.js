@@ -14,6 +14,8 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.post('/signup', (req, res) => {});
+
 // Connecting to our localhost
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
