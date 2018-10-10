@@ -28,4 +28,5 @@ describe('User visits home page', () => {
       browser.assert.text('h1', 'Hello jon@email.com');
     });
   });
+
 });

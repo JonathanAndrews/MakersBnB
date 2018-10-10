@@ -5,21 +5,23 @@ Browser.localhost('localhost', 3000);
 describe('User visits log in page', () => {
   const browser = new Browser();
 
-  before(function)
+  beforeEach((done) => {
+    browser.visit('/', done);
+  });
 
-  it('loads the login page', () => {
-    broswer.visit('/', () => {
-      browser.pressButton("Login")
-      browser.assert.text('body', 'LOGIN PAGE')
-    })
+  describe('fills in the login form', () => {
+    beforeEach((done) => {
+      browser.fill('loginemail', "ayo@email.com")
+      browser.fill('loginpassword', "climbing");
+      browser.pressButton('Login', done)
+    });
 
-  it('fills in the login  form', () => {
-    broswer.visit('/', () => {
-      browser.pressButton("Login")
-      browser.fill('email', "ayo@email.com")
-      browser.fill('password', "climbing");
-      browser.pressButton('Login')
-      browser.assert.text('body', "Welcome")
-    })
-  })
+    it('should be successful', () => {
+      browser.assert.success();
+    });
+
+    it('should welcome user', () => {
+      browser.assert.text('body', "Welcome back ayo@email.com");
+    });
+  });
 })

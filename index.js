@@ -32,6 +32,8 @@ app.get('/dashboard', (req, res) => {
   res.render('dashboard');
 });
 
+// app.post('/login', (req, res) => {});
+
 // Connecting to our localhost
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
