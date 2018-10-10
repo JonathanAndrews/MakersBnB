@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+<<<<<<< HEAD
 app.post('/signup', (req, res) => {
   const sessData = req.session;
   sessData.email = req.body['sign-up-email'];
@@ -32,6 +33,9 @@ app.get('/dashboard', (req, res) => {
   res.locals.email = req.session.email;
   res.render('dashboard');
 });
+=======
+app.post('/signup', (req, res) => {});
+>>>>>>> master
 
 // Connecting to our localhost
 app.listen(port, () => {
