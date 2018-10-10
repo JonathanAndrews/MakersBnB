@@ -5,9 +5,11 @@ Browser.localhost('localhost', 3000);
 describe('User visits home page', () => {
   const browser = new Browser();
 
-  it('should see hello world', () => {
-    browser.visit('/', () => {
-      browser.assert.text('body', 'Hello World!');
-    });
+  beforeEach((done) => {
+    browser.visit('/', done);
+  });
+
+  it("should say 'Welcome to LocalHost!'", () => {
+    browser.assert.text('body', 'Welcome to LocalHost!');
   });
 });
