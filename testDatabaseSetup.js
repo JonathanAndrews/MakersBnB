@@ -53,8 +53,8 @@ db.once('open', () => {
     price: 135,
   });
 
-  User.deleteMany({}).exec()
-  Listing.deleteMany({}).exec()
+  User.deleteMany({}).exec();
+  Listing.deleteMany({}).exec();
 
   dummyUser.save();
   dummyUser2.save();
