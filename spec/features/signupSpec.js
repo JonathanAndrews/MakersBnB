@@ -27,5 +27,9 @@ describe('User visits home page', () => {
     it('should welcome user', () => {
       browser.assert.text('h1', 'Hello jon@email.com');
     });
+
+    it('should show a list of spaces', () => {
+      browser.assert.text('.listing-1-name', 'Brixton Terrace');
+    });
   });
 });
