@@ -22,9 +22,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
-  const sessData = req.session;
-  sessData.email = req.body['sign-up-email'];
-  sessData.password = req.body['sign-up-password'];
+  req.session.email = req.body['sign-up-email'];
+  req.session.password = req.body['sign-up-password'];
   res.redirect('/dashboard');
 });
 
