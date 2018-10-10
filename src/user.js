@@ -5,8 +5,6 @@ mongoose.connect(
   { useNewUrlParser: true },
 );
 
-const db = mongoose.connection;
-
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
