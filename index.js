@@ -32,7 +32,11 @@ app.get('/dashboard', (req, res) => {
   res.render('dashboard');
 });
 
-// app.post('/login', (req, res) => {});
+app.post('/login', (req, res) => {
+  req.session.email = req.body['loginemail']
+  req.session.password = req.body['loginpassword']
+  res.redirect('/dashboard');
+});
 
 // Connecting to our localhost
 app.listen(port, () => {

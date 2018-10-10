@@ -21,7 +21,7 @@ describe('User visits log in page', () => {
     });
 
     it('should welcome user', () => {
-      browser.assert.text('body', "Welcome back ayo@email.com");
+      browser.assert.text('#greeting', "Hello ayo@email.com");
     });
   });
 })
