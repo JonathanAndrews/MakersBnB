@@ -20,7 +20,6 @@ db.once('open', () => {
     price: Number,
   });
   const Listing = mongoose.model('Listing', listingSchema);
-
   const dummyUser = new User({ email: 'alex@mail.com', password: 'dogareskewl' });
   const dummyListing = new Listing({
     name: 'Westminster Flat',
