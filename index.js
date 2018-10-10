@@ -38,6 +38,8 @@ app.post('/login', (req, res) => {
   res.redirect('/dashboard');
 });
 
+// app.post('/login', (req, res) => {});
+
 // Connecting to our localhost
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
