@@ -7,4 +7,6 @@ describe('User', () => {
       expect(user).toEqual('mathilda@email.com');
     });
   });
+
+  it('should be able to add a user', () => {});
 });
