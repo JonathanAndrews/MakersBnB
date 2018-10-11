@@ -1,13 +1,18 @@
 
 <% include partials/header %>
-<h1>Hello <%= user %></h1>
+
+<h1 id="greeting">Hello <%= email %></h1>
+<form action="/listings/new">
+  <button type="submit" name="add_space">Add New Space</button>
+</form>
 <ul>
   <% let num = 1 %>
   <% listings.forEach(function(listing) { %>
     <li class="listing-<%= num %>">
       <span class="listing-<%= num %>-name"><%= listing.name %></span> - <%= listing.description %> - <a href="/listing/<%=listing.id%>" class="listing-<%= num %>">Book Now</a>
     </li>
-    <% num++ %> 
+    <% num++ %>
   <% }) %>
 </ul>
+
 <% include partials/footer %>
