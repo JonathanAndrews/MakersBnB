@@ -93,6 +93,25 @@ app.post('/login', (req, res) => {
   });
 });
 
+// This route will allow us to book a space
+app.get('/listing/:id/book', (req, res) => {
+  Listing.findById(req.params.id, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('bookingPage', { listing });
+    }
+  });
+});
+
+app.post('/listing/confirm', (req, res) => {
+  req.session.dateBooking = req.body.dateBooking;
+  res.redirect('/confirmation');
+});
+
+app.get('/confirmation', (req, res) => {
+  res.render('confirmation', { date: req.session.dateBooking });
+});
 // Connecting to our localhost
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
