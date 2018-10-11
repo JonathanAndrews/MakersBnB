@@ -51,6 +51,25 @@ app.get('/listing/:id', (req, res) => {
   });
 });
 
+app.get('/listing/:id', (req, res) => {
+  const listingId = req.params.id;
+  Listing.findById(listingId, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('listing', { listing });
+    }
+  });
+});
+
+app.post('/login', (req, res) => {
+  req.session.email = req.body['loginemail']
+  req.session.password = req.body['loginpassword']
+  res.redirect('/dashboard');
+});
+
+// app.post('/login', (req, res) => {});
+
 // Connecting to our localhost
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
