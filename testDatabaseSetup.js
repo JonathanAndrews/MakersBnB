@@ -56,14 +56,14 @@ db.once('open', () => {
   User.deleteMany({}).exec();
   Listing.deleteMany({}).exec();
 
-  const user_array = [dummyUser, dummyUser2, dummyUser3, dummyUser4, dummyUser5];
-  const listing_array = [dummyListing, dummyListing2, dummyListing3, dummyListing4, dummyListing5];
+  const userArray = [dummyUser, dummyUser2, dummyUser3, dummyUser4, dummyUser5];
+  const listingArray = [dummyListing, dummyListing2, dummyListing3, dummyListing4, dummyListing5];
   User.insertMany(
-    user_array,
+    userArray,
     (error, docs) => {
       console.log('Users saved', docs);
       Listing.insertMany(
-        listing_array,
+        listingArray,
         (error, docs) => {
           console.log('Listings saved', docs);
           db.close();

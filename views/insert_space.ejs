@@ -1,12 +1,14 @@
+<% include partials/header %>
 <header>
   <h1>Please Input Info:</h1>
 </header>
 
-<body>
-  <!-- This is the form for adding speces to our space database and dashboard list -->
+  <!-- This is the form for adding spaces to our space database and dashboard list -->
   <form action="/listings/new" method="post">
-    <input type="text" name="name">
-    <input type="text" name="description">
-    <input type="text" name="price">
-    <button type="sumbit" name="Submit">Submit</button>
+    <input type="text" name="name" placeholder="title">
+    <input type="text" name="description" placeholder="description">
+    <input type="number" name="price" placeholder="price">
+    <button type="submit" name="Submit" class="button-primary">Submit</button>
   </form>
+
+<% include partials/footer %>
