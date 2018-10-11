@@ -39,34 +39,54 @@ app.get('/dashboard', (req, res) => {
     }
   });
 });
-
-app.get('/listing/:id', (req, res) => {
-  const listingId = req.params.id;
-  Listing.findById(listingId, (err, listing) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('listing', { listing });
-    }
-  });
-});
-
-app.get('/listing/:id', (req, res) => {
-  const listingId = req.params.id;
-  Listing.findById(listingId, (err, listing) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('listing', { listing });
-    }
-  });
-});
-
 app.post('/login', (req, res) => {
   req.session.email = req.body['loginemail']
   req.session.password = req.body['loginpassword']
   res.redirect('/dashboard');
 });
+
+  // this takes you to New Space form
+app.get('/listings/new', (req, res) => {
+  res.render('insert_space');
+});
+
+  // this saves a new space to the database
+app.post('/listings/new', (req, res) => {
+  const listing = new Listing({
+    name: req.body['name'],
+    description: req.body['description'],
+    price: req.body['price'],
+  });
+  listing.save().then((docs) => {
+    console.log('listing saved', docs);
+    res.redirect('/dashboard');
+  },(e) => {
+    console.log('unable to save');
+  });
+});
+
+app.get('/listing/:id', (req, res) => {
+  const listingId = req.params.id;
+  Listing.findById(listingId, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('listing', { listing });
+    }
+  });
+});
+
+app.get('/listing/:id', (req, res) => {
+  const listingId = req.params.id;
+  Listing.findById(listingId, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('listing', { listing });
+    }
+  });
+});
+
 
 // app.post('/login', (req, res) => {});
 
@@ -74,3 +94,5 @@ app.post('/login', (req, res) => {
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
+
+// jjjdjdjdjjdjdjdjdjdjdjdjdjdjdj

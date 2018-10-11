@@ -32,4 +32,5 @@ describe('User visits home page', () => {
       browser.assert.text('.listing-1-name', 'Brixton Terrace');
     });
   });
+
 });
