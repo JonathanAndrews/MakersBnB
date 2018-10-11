@@ -1,8 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+
+// Our DB Models:
+const User = require('./src/user');
 const Listing = require('./src/listing');
 
+// Sets up Express App and Port:
 const app = express();
 const port = 3000;
 
@@ -23,19 +27,24 @@ app.get('/', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
+  const newUser = new User({
+    email: req.body['sign-up-email'],
+    password: req.body['sign-up-password'],
+  });
+  newUser.save();
   req.session.email = req.body['sign-up-email'];
-  req.session.password = req.body['sign-up-password'];
   res.redirect('/dashboard');
 });
 
 app.get('/dashboard', (req, res) => {
   // get all listings from db
+  const currentUser = req.session.loginEmail;
+  req.session.loginEmail = null;
   Listing.find({}, (err, allListings) => {
     if (err) {
       console.log(err);
     } else {
-      res.locals.email = req.session.email;
-      res.render('dashboard', { listings: allListings });
+      res.render('dashboard', { listings: allListings, user: currentUser });
     }
   });
 });
@@ -63,12 +72,15 @@ app.get('/listing/:id', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  req.session.email = req.body['loginemail']
-  req.session.password = req.body['loginpassword']
-  res.redirect('/dashboard');
+  User.findOne({ email: req.body.loginemail, password: req.body.loginpassword }, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else {
+      req.session.loginEmail = user.email;
+      res.redirect('/dashboard');
+    }
+  });
 });
-
-// app.post('/login', (req, res) => {});
 
 // Connecting to our localhost
 app.listen(port, () => {
