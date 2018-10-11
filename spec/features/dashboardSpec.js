@@ -15,7 +15,7 @@ describe('User goes on Dashboard', () => {
     });
 
     it('should say Listing Name', () => {
-      browser.assert.text('h1', 'Brixton Terrace');
+      browser.assert.text('h1', 'Westminster Flat');
     });
   });
 });

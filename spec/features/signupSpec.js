@@ -29,7 +29,7 @@ describe('User visits home page', () => {
     });
 
     it('should show a list of spaces', () => {
-      browser.assert.text('.listing-1-name', 'Brixton Terrace');
+      browser.assert.text('.listing-1-name', 'Westminster Flat');
     });
   });
 });

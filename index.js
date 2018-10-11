@@ -38,7 +38,7 @@ app.post('/signup', (req, res) => {
 
 app.get('/dashboard', (req, res) => {
   // get all listings from db
-  const currentUser = req.session.loginEmail;
+  const currentUser = req.session.email;
   Listing.find({}, (err, allListings) => {
     if (err) {
       console.log(err);
@@ -72,10 +72,10 @@ app.get('/listing/:id', (req, res) => {
 
 app.post('/login', (req, res) => {
   User.findOne({ email: req.body.loginemail, password: req.body.loginpassword }, (err, user) => {
-    if (err) {
-      console.log(err);
+    if (user === null) {
+      res.send('Incorrect Email or password! <a href="/">go back</a>');
     } else {
-      req.session.loginEmail = user.email;
+      req.session.email = user.email;
       res.redirect('/dashboard');
     }
   });
