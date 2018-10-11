@@ -38,6 +38,17 @@ app.post('/login', (req, res) => {
   res.redirect('/dashboard');
 });
 
+app.get('/listings/new', (req, res) => {
+  res.render('insert_space');
+});
+
+app.post('/listings/new', (req, res) => {
+  req.session.name = req.body['name']
+  req.session.description = req.body['description']
+  req.session.price = req.body['price']
+  Listing.
+});
+
 // app.post('/login', (req, res) => {});
 
 // Connecting to our localhost

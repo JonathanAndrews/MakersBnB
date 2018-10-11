@@ -1,4 +1,7 @@
 
 <% include partials/header %>
 <h1 id="greeting">Hello <%= email %></h1>
+<form action="/listings/new">
+  <button type="submit" name="add_space">Add New Space</button>
+</form>
 <% include partials/footer %>
