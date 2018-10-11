@@ -22,7 +22,7 @@ describe('User visits log in page', () => {
     })
 
     it('should load Add Space form', () => {
-      browser.assert.text('#title', "Please Input Info");
+      browser.assert.text('h1', "Please Input Info");
     });
   })
 })
