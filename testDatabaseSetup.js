@@ -56,14 +56,33 @@ db.once('open', () => {
   User.deleteMany({}).exec();
   Listing.deleteMany({}).exec();
 
-  dummyUser.save();
-  dummyUser2.save();
-  dummyUser3.save();
-  dummyUser4.save();
-  dummyUser5.save();
-  dummyListing.save();
-  dummyListing2.save();
-  dummyListing3.save();
-  dummyListing4.save();
-  dummyListing5.save();
+  var user_array = [ dummyUser, dummyUser2, dummyUser3, dummyUser4, dummyUser5]
+  var listing_array = [dummyListing, dummyListing2, dummyListing3, dummyListing4, dummyListing5];
+  User.insertMany(user_array, function(error, docs) {
+    console.log('Users saved',docs);
+    Listing.insertMany(listing_array, function(error, docs) {
+      console.log('Listings saved',docs);
+      db.close();
+    },(e)=>{
+      console.log('unable to save listing');
+    });
+  },(e)=>{
+    console.log('unable to save users');
+  });
+
+  // dummyUser.save();
+  // dummyUser2.save();
+  // dummyUser3.save();
+  // dummyUser4.save();
+  // dummyUser5.save();
+  // dummyListing.save();
+  // dummyListing2.save();
+  // dummyListing3.save();
+  // dummyListing4.save();
+  // dummyListing5.save().then((docs)=>{
+  //   console.log('listing saved',docs);
+  //   db.close();
+  // },(e)=>{
+  //   console.log('unable to save');
+  // });
 });
