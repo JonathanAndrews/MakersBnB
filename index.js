@@ -48,24 +48,27 @@ app.get('/dashboard', (req, res) => {
   });
 });
 
-  // this takes you to New Space form
+// this takes you to New Space form
 app.get('/listings/new', (req, res) => {
   res.render('insert_space');
 });
 
-  // this saves a new space to the database
+// this saves a new space to the database
 app.post('/listings/new', (req, res) => {
   const listing = new Listing({
-    name: req.body['name'],
-    description: req.body['description'],
-    price: req.body['price'],
+    name: req.body.name,
+    description: req.body.description,
+    price: req.body.price,
   });
-  listing.save().then((docs) => {
-    console.log('listing saved', docs);
-    res.redirect('/dashboard');
-  },(e) => {
-    console.log('unable to save');
-  });
+  listing.save().then(
+    (docs) => {
+      console.log('listing saved', docs);
+      res.redirect('/dashboard');
+    },
+    (e) => {
+      console.log('unable to save');
+    },
+  );
 });
 
 app.get('/listing/:id', (req, res) => {
@@ -94,5 +97,3 @@ app.post('/login', (req, res) => {
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
-
-// jjjdjdjdjjdjdjdjdjdjdjdjdjdjdj
