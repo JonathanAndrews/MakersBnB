@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const Listing = require('./src/listing');
 
 const app = express();
 const port = 3000;
@@ -28,10 +29,16 @@ app.post('/signup', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-  res.locals.email = req.session.email;
-  res.render('dashboard');
+  // get all listings from db
+  Listing.find({}, (err, allListings) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.locals.email = req.session.email;
+      res.render('dashboard', { listings: allListings });
+    }
+  });
 });
-
 app.post('/login', (req, res) => {
   req.session.email = req.body['loginemail']
   req.session.password = req.body['loginpassword']
@@ -47,7 +54,29 @@ app.post('/listings/new', (req, res) => {
   req.session.description = req.body['description']
   req.session.price = req.body['price']
   Listing.
+
+app.get('/listing/:id', (req, res) => {
+  const listingId = req.params.id;
+  Listing.findById(listingId, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('listing', { listing });
+    }
+  });
 });
+
+app.get('/listing/:id', (req, res) => {
+  const listingId = req.params.id;
+  Listing.findById(listingId, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('listing', { listing });
+    }
+  });
+});
+
 
 // app.post('/login', (req, res) => {});
 
@@ -55,3 +84,5 @@ app.post('/listings/new', (req, res) => {
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
+
+// jjjdjdjdjjdjdjdjdjdjdjdjdjdjdj

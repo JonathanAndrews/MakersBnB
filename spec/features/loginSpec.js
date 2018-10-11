@@ -11,9 +11,9 @@ describe('User visits log in page', () => {
 
   describe('fills in the login form', () => {
     beforeEach((done) => {
-      browser.fill('loginemail', "ayo@email.com")
-      browser.fill('loginpassword', "climbing");
-      browser.pressButton('Login', done)
+      browser.fill('loginemail', 'ayo@email.com');
+      browser.fill('loginpassword', 'climbing');
+      browser.pressButton('Login', done);
     });
 
     it('should be successful', () => {
@@ -21,8 +21,7 @@ describe('User visits log in page', () => {
     });
 
     it('should welcome user', () => {
-      browser.assert.text('#greeting', "Hello ayo@email.com");
+      browser.assert.text('h1', 'Hello ayo@email.com');
     });
   });
-  
-})
+});
