@@ -39,7 +39,6 @@ app.post('/signup', (req, res) => {
 app.get('/dashboard', (req, res) => {
   // get all listings from db
   const currentUser = req.session.loginEmail;
-  req.session.loginEmail = null;
   Listing.find({}, (err, allListings) => {
     if (err) {
       console.log(err);
