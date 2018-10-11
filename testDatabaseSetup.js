@@ -18,6 +18,7 @@ db.once('open', () => {
     name: String,
     description: String,
     price: Number,
+    ownerID: Number,
   });
   const Listing = mongoose.model('Listing', listingSchema);
 
@@ -31,26 +32,31 @@ db.once('open', () => {
     name: 'Westminster Flat',
     description: 'Best view of big ben',
     price: 100,
+    ownerID: 25,
   });
   const dummyListing2 = new Listing({
     name: 'Camden loft',
     description: 'No windows, so room has a lot of birds.',
     price: 20,
+    ownerID: 26,
   });
   const dummyListing3 = new Listing({
     name: 'Hampstead Masion',
     description: 'Great views of the heath',
     price: 200000,
+    ownerID: 27,
   });
   const dummyListing4 = new Listing({
     name: 'Brixton Terrace',
     description: 'Recently gentified area',
     price: 70,
+    ownerID: 28,
   });
   const dummyListing5 = new Listing({
     name: 'Makers',
     description: 'Full of people struggling with mongoose...',
     price: 135,
+    ownerID: 29,
   });
 
   User.deleteMany({}).exec();

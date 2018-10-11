@@ -31,9 +31,14 @@ app.post('/signup', (req, res) => {
     email: req.body['sign-up-email'],
     password: req.body['sign-up-password'],
   });
-  newUser.save();
-  req.session.email = req.body['sign-up-email'];
-  res.redirect('/dashboard');
+  newUser.save().then((docs) => {
+    console.log(docs.id)
+    req.session.userID = docs.id
+    console.log("something")
+    console.log(req.session.userID)
+    req.session.email = req.body['sign-up-email'];
+    res.redirect('/dashboard');
+  });
 });
 
 app.get('/dashboard', (req, res) => {
@@ -55,10 +60,13 @@ app.get('/listings/new', (req, res) => {
 
 // this saves a new space to the database
 app.post('/listings/new', (req, res) => {
+  console.log("Hello")
+  console.log(req.session.userID);
   const listing = new Listing({
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
+    ownerID: req.session.userID,
   });
   listing.save().then(
     (docs) => {
@@ -88,6 +96,7 @@ app.post('/login', (req, res) => {
       res.send('Incorrect Email or password! <a href="/">go back</a>');
     } else {
       req.session.email = user.email;
+      req.session.userID = user.id;
       res.redirect('/dashboard');
     }
   });
