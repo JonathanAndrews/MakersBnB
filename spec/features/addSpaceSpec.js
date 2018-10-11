@@ -31,7 +31,11 @@ describe('User visits dashboard', () => {
       });
 
       it('should be successful', () => {
-        browser.assert.success();
+        browser.assert.success()
+      });
+
+      it('should show up on dashboard', () => {
+        browser.assert.text('.listing-6-name', '21 Woodfarrs');
       });
     });
   });
