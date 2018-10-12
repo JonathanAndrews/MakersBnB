@@ -1,1 +1,6 @@
 <h1>Your Booking Requests</h1>
+<ul>
+<% listings.forEach(function(listing){ %>
+<li><%= listing.name %> - <%= listing.ownerID %> <button><a href="/approve">Approve</a></button><button><a href="/deny">Deny</a></button></li>
+<% }); %>
+</ul>

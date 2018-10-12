@@ -5,26 +5,31 @@ Browser.localhost('localhost', 3000);
 describe('checks their booking requests', () => {
   const browser = new Browser();
 
-  beforeEach((done) => {
-    browser.visit('/dashboard', done);
+  it('has a booking request button', (next) => {
+    browser.visit('/dashboard', () => {
+      browser.pressButton('Check Booking Requests', () => {
+        expect(browser.html('body')).toContain('Your Booking Requests');
+        next();
+      });
+    });
   });
 
-  describe("Clicks 'Check Booking Requests'", () => {
+  describe('checks the confirm and deny buttons', () => {
     beforeEach((done) => {
-      browser.pressButton('Check Booking Requests', done);
+      browser.visit('/listings/requests', done);
+    });
+    it('has a confirmation button', (done) => {
+      browser.clickLink('Approve', () => {
+        expect(browser.html('h1')).toContain('Approved Booking');
+        done();
+      });
     });
 
-    it('should be successful', () => {
-      browser.assert.success();
+    it('has a deny button', (done) => {
+      browser.clickLink('Deny', () => {
+        expect(browser.html('h1')).toContain('Denied Booking');
+        done();
+      });
     });
   });
-
-  // xit('on the dashboard', (done) => {
-  //   browser.visit('/dashboard', () => {
-  //       browser.pressButton("Check Booking Requests", () => {
-  //         expect(browser.html("body")).toContain("Your Booking Requests");
-  //         done()
-  //       });
-  //     });
-  // });
 });
