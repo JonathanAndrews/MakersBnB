@@ -8,22 +8,57 @@ The aim of the task was to create a clone of the website AirBnB from scratch wit
 ###Technologies Used
 As a team, we chose to use the language JavaScript, which involved using new technologies such as:
 
+**Front End:**
+EJS
+Skeleton
+
+**Back End:**
 Node
 Express
 MongoDB
 Mongoose
+
+**Behaviour Driven Development:**
 Zombie
 Jasmine
-EJS
-Skeleton
 
-### User Stories
+##Instructions
+- Clone this repo to your computer:
+
+`git clone https://github.com/JonathanAndrews/MakersBnB.git`
+
+- Install [MongoDB](https://www.mongodb.com/download-center/v2/community) to your computer. Use this [video](https://www.youtube.com/watch?v=DX15WbKidXY) if your encounter any issues.
+
+- Install Node and check for updates
+
+`brew install node`
+
+- Install dependencies
+
+`npm install`
+
+- Set up test database
+
+`node testDatabaseSetup.js`
+
+- run Mongod server in your terminal
+
+`mongod`
+
+- In a separate terminal run application server
+
+`node index.js`
+
+- Go to localhost:3000 in your web browser
+
+###User Stories
 At the beginning of the week, we were given a list of [headline specifications](https://github.com/makersacademy/course/blob/master/makersbnb/specification_and_mockups.md), which we used to create these user stories:
 ![User Stories](domain-models/user-stories.png)
 
 At the start, the ones with the green ticks were ones we felt were key towards achieving our minimum viable product.
 
 ##What We Expected/Initial Goals
+
 - To improve our collaborative learning skills
 - To establish a good developer workflow
 - Building a functional web page that allows a User Sign Up or log back in
@@ -44,3 +79,14 @@ At the start, the ones with the green ticks were ones we felt were key towards a
 - Have a skeletal structure which allows a user to book a date in a space
 
 ##What We Would Want to Improve
+
+##How You Feel It Went
+
+**Ollie:**
+
+**Alex:**
+
+**Jonathan:**
+
+**Ayo:**
+I think this week has proven very productive. Working in a group provides a new set of challenges along with the ones that the weekly challenge had, so getting to grips with it at first 
