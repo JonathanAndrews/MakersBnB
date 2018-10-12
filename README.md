@@ -80,6 +80,20 @@ At the start, the ones with the green ticks were ones we felt were key towards a
 - Users are able to list a space with their ID saved to that space
 - Have a skeletal structure which allows a user to book a date in a space
 
+
+##Lessons from each day
+
+1. Don’t code until you understand, _don’t panic_.
+
+2. Understand the stack.
+
+3. Work front to back, “feature —> Unit —> refactor“
+
+4. Focus on process, not the project.
+
+5. __Have fun__.
+
+
 ##What We Would Want to Improve
 
 ##How You Feel It Went
@@ -90,5 +104,11 @@ At the start, the ones with the green ticks were ones we felt were key towards a
 
 **Jonathan:**
 
+There were two main challenges this week.
+
+The first was understanding and using an unfamiliar tech stack. Having never used a NoSQL database before, we spent the first two days getting to grips with Mongo, our database, and Mongoose, an ORM. This was very valuable and made the later part of the week much smoother.
+
+The second challenge was coding as a team. This meant we needed to be very specific about what each pair was working on and to communicate regularly, something we got better at over the week.
+
 **Ayo:**
-I think this week has proven very productive. Working in a group provides a new set of challenges along with the ones that the weekly challenge had, so getting to grips with it at first 
+I think this week has proven very productive. Working in a group provides a new set of challenges along with the ones that the weekly challenge had, so getting to grips with it at first
