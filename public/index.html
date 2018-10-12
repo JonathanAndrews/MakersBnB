@@ -9,17 +9,19 @@
 </head>
   <link rel="stylesheet" href="landingPage.css">
 <body>
-  <h2>Welcome to LocalHost!</h2>
-  <form action="/signup" method="post">
-    <input type="email" name="sign-up-email" placeholder="Email">
-    <input type="password" name="sign-up-password" placeholder="Password">
-    <input type="submit" value="Sign Up" class="button-primary">
-  </form>
+  <div class="wrapper">
+  <h2><span class="title">Welcome to LocalHost!</span></h2>
+    <form action="/signup" method="post">
+      <input type="email" name="sign-up-email" placeholder="Email">
+      <input type="password" name="sign-up-password" placeholder="Password">
+      <input type="submit" value="Sign Up" class="button-primary">
+    </form>
 
-  <form action="/login" method="post">
-    <input type="email" name="loginemail" placeholder="Email">
-    <input type="password" name="loginpassword" placeholder="Password">
-    <input type="submit" value="Login" class="button-primary">
-  </form>
+    <form action="/login" method="post">
+      <input type="email" name="loginemail" placeholder="Email">
+      <input type="password" name="loginpassword" placeholder="Password">
+      <input type="submit" value="Login" class="button-primary">
+    </form>
+  </div>
 </body>
 </html>
