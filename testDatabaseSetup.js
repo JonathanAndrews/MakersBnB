@@ -35,40 +35,40 @@ db.once('open', () => {
     description: 'Best view of big ben',
     price: 100,
     ownerID: 25,
-    startDate: '05/06/2019',
-    endDate: '06/07/2019',
+    startDate: '2019-07-05',
+    endDate: '2019-10-04',
   });
   const dummyListing2 = new Listing({
     name: 'Camden loft',
     description: 'No windows, so room has a lot of birds.',
     price: 20,
     ownerID: 26,
-    startDate: '05/06/2019',
-    endDate: '06/07/2019',
+    startDate: '2019-07-05',
+    endDate: '2019-10-04',
   });
   const dummyListing3 = new Listing({
     name: 'Hampstead Masion',
     description: 'Great views of the heath',
     price: 200000,
     ownerID: 27,
-    startDate: '05/06/2019',
-    endDate: '06/07/2019',
+    startDate: '2019-07-05',
+    endDate: '2019-10-04',
   });
   const dummyListing4 = new Listing({
     name: 'Brixton Terrace',
     description: 'Recently gentified area',
     price: 70,
     ownerID: 28,
-    startDate: '05/06/2019',
-    endDate: '06/07/2019',
+    startDate: '2019-07-05',
+    endDate: '2019-10-04',
   });
   const dummyListing5 = new Listing({
     name: 'Makers',
     description: 'Full of people struggling with mongoose...',
     price: 135,
     ownerID: 29,
-    startDate: '05/06/2019',
-    endDate: '06/07/2019',
+    startDate: '2019-07-05',
+    endDate: '2019-10-04',
   });
 
   User.deleteMany({}).exec();
