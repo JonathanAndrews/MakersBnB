@@ -18,7 +18,7 @@ describe('User visits sign-up page', () => {
 
     describe('click Add space button', () => {
       beforeEach((done) => {
-        browser.pressButton('Add New Space', done)
+        browser.pressButton('Add New Space', done);
       });
 
       it('should be successful', () => {
@@ -26,7 +26,7 @@ describe('User visits sign-up page', () => {
       });
 
       it('should load Add Space form', () => {
-        browser.assert.text('h1', "Please Input Info:");
+        browser.assert.text('h1', 'Please Input Info:');
       });
 
       describe('fills in New Space form', () => {
@@ -34,15 +34,36 @@ describe('User visits sign-up page', () => {
           browser.fill('name', '21 Woodfarrs');
           browser.fill('description', 'Two bed house');
           browser.fill('price', 340);
+          browser.fill('start-date', '11/11/2018');
+          browser.fill('end-date', '12/12/2018');
           browser.pressButton('Submit', done);
         });
 
         it('should be successful', () => {
-          browser.assert.success()
+          browser.assert.success();
         });
 
         it('should show up on dashboard', () => {
           browser.assert.text('.listing-6-name', '21 Woodfarrs');
+        });
+
+        describe('click on booking to check space details', () => {
+          beforeEach((done) => {
+            browser.clickLink('.listing-6-link', done);
+          });
+
+          describe('click on book for a night', () => {
+            beforeEach((done) => {
+              browser.pressButton('Book for a Night', done);
+            });
+
+            it('should show the start and end date', () => {
+              browser.assert.text(
+                '#available-date',
+                "Space's Available Date: 11/11/2018 - 12/12/2018",
+              );
+            });
+          });
         });
       });
     });

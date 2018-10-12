@@ -32,7 +32,7 @@ app.post('/signup', (req, res) => {
     password: req.body['sign-up-password'],
   });
   newUser.save().then((docs) => {
-    req.session.userID = docs.id
+    req.session.userID = docs.id;
     req.session.email = req.body['sign-up-email'];
     res.redirect('/dashboard');
   });
@@ -61,6 +61,8 @@ app.post('/listings/new', (req, res) => {
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
+    startDate: req.body['start-date'],
+    endDate: req.body['end-date'],
     ownerID: req.session.userID,
   });
   listing.save().then(
