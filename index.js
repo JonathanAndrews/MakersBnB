@@ -60,9 +60,8 @@ app.post('/listings/new', (req, res) => {
   const listing = new Listing({
     name: req.body.name,
     description: req.body.description,
+    imageURL: req.body.imageURL,
     price: req.body.price,
-    startDate: req.body['start-date'],
-    endDate: req.body['end-date'],
     ownerID: req.session.userID,
   });
   listing.save().then(
@@ -120,13 +119,18 @@ app.get('/listing/:id/book', (req, res) => {
   });
 });
 
-app.post('/listing/confirm', (req, res) => {
-  req.session.dateBooking = req.body.dateBooking;
-  res.redirect('/confirmation');
-});
-
-app.get('/confirmation', (req, res) => {
-  res.render('confirmation', { date: req.session.dateBooking });
+// This route stores the date of the Booking request
+app.post('/listing/:id/book', (req, res) => {
+  Listing.findById(req.params.id, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const requestDate = req.body['dateBooking'];
+      listing.bookingRequest.push(requestDate);
+      listing.save();
+      res.redirect('/dashboard');
+    }
+  });
 });
 
 app.get('/approve', (req, res) => {
@@ -136,6 +140,7 @@ app.get('/approve', (req, res) => {
 app.get('/deny', (req, res) => {
   res.send('<h1>Denied Booking</h1>');
 });
+
 // Connecting to our localhost
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);

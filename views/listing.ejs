@@ -1,6 +1,11 @@
 <% include partials/header %> 
-<h1><%= listing.name %></h1>
-<form action="/listing/<%= listing.id %>/book" method="get">
-  <input type="submit" value="Book for a Night">
-</form>
+<div style="text-align: center;">
+  <h1><%= listing.name %></h1>
+  <h5><%= listing.description %></h5>
+  <h6>The price is £<%= listing.price %> per night!</h6>
+  <img src="<%= listing.imageURL %>" alt="<%= listing.name %> photo" height="300px" width="500px">
+  <form action="/listing/<%= listing.id %>/book" method="get">
+    <input type="submit" value="Book for a Night">
+  </form>
+</div>
 <% include partials/footer %>
