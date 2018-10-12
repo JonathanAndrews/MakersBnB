@@ -13,6 +13,7 @@ const listingSchema = new mongoose.Schema({
   ownerID: String,
   startDate: String,
   endDate: String,
+  bookingRequest: [String],
 });
 
 const Listing = mongoose.model('Listing', listingSchema);

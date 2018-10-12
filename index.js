@@ -109,14 +109,20 @@ app.get('/listing/:id/book', (req, res) => {
   });
 });
 
-app.post('/listing/confirm', (req, res) => {
-  req.session.dateBooking = req.body.dateBooking;
-  res.redirect('/confirmation');
+// This route stores the date of the Booking request
+app.post('/listing/:id/book', (req, res) => {
+  Listing.findById(req.params.id, (err, listing) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const requestDate = req.body['dateBooking'];
+      listing.bookingRequest.push(requestDate);
+      listing.save();
+      res.redirect('/dashboard');
+    }
+  });
 });
 
-app.get('/confirmation', (req, res) => {
-  res.render('confirmation', { date: req.session.dateBooking });
-});
 // Connecting to our localhost
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
