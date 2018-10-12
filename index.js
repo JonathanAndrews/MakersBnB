@@ -31,9 +31,11 @@ app.post('/signup', (req, res) => {
     email: req.body['sign-up-email'],
     password: req.body['sign-up-password'],
   });
-  newUser.save();
-  req.session.email = req.body['sign-up-email'];
-  res.redirect('/dashboard');
+  newUser.save().then((docs) => {
+    req.session.userID = docs.id
+    req.session.email = req.body['sign-up-email'];
+    res.redirect('/dashboard');
+  });
 });
 
 app.get('/dashboard', (req, res) => {
@@ -59,6 +61,7 @@ app.post('/listings/new', (req, res) => {
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
+    ownerID: req.session.userID,
   });
   listing.save().then(
     (docs) => {
@@ -88,6 +91,7 @@ app.post('/login', (req, res) => {
       res.send('Incorrect Email or password! <a href="/">go back</a>');
     } else {
       req.session.email = user.email;
+      req.session.userID = user.id;
       res.redirect('/dashboard');
     }
   });
