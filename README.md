@@ -27,7 +27,7 @@ Jasmine
 
 `git clone https://github.com/JonathanAndrews/MakersBnB.git`
 
-- Install [MongoDB](https://www.mongodb.com/download-center/v2/community) to your computer. Use this [video](https://www.youtube.com/watch?v=DX15WbKidXY) if your encounter any issues.
+- Install [MongoDB](https://www.mongodb.com/download-center/v2/community) to your computer. Use this [video](https://www.youtube.com/watch?v=DX15WbKidXY) if you encounter any issues.
 
 - Install Node and check for updates
 
