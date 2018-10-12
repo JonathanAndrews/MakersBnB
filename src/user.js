@@ -16,10 +16,6 @@ userSchema.statics.findByEmail = function (email, cb) {
   return this.find({ email: new RegExp(email, 'i') }, cb);
 };
 
-userSchema.statics.helloWorld = function () {
-  console.log('Hello world!');
-};
-
 const User = mongoose.model('User', userSchema);
 
 // User.find({ email: 'alex@mail.com' }, (err, users) => {

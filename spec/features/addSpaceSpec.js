@@ -40,7 +40,6 @@ describe('User visits sign-up page', () => {
             beforeEach((done) => {
               browser.pressButton('Book for a Night', done);
             });
-
           });
         });
       });

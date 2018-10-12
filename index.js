@@ -125,7 +125,7 @@ app.post('/listing/:id/book', (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      const requestDate = req.body['dateBooking'];
+      const requestDate = req.body.dateBooking;
       listing.bookingRequest.push(requestDate);
       listing.save();
       res.redirect('/dashboard');
