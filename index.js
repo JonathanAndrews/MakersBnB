@@ -77,7 +77,7 @@ app.post('/listings/new', (req, res) => {
 });
 
 app.get('/listings/requests', (req, res) => {
-  res.render('bookingRequests')
+  res.render('bookingRequests');
 });
 
 app.get('/listing/:id', (req, res) => {
@@ -118,7 +118,6 @@ app.post('/listing/confirm', (req, res) => {
   req.session.dateBooking = req.body.dateBooking;
   res.redirect('/confirmation');
 });
-
 
 app.get('/confirmation', (req, res) => {
   res.render('confirmation', { date: req.session.dateBooking });
