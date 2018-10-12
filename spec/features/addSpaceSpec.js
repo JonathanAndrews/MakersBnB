@@ -60,7 +60,7 @@ describe('User visits sign-up page', () => {
             it('should show the start and end date', () => {
               browser.assert.text(
                 '#available-date',
-                "Space's Available Date: 11/11/2018 - 12/12/2018",
+                "Space's Available Date: Sun Nov 11 2018 - Wed Dec 12 2018",
               );
             });
           });
