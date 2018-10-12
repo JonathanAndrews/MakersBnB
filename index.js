@@ -32,10 +32,7 @@ app.post('/signup', (req, res) => {
     password: req.body['sign-up-password'],
   });
   newUser.save().then((docs) => {
-    console.log(docs.id)
     req.session.userID = docs.id
-    console.log("something")
-    console.log(req.session.userID)
     req.session.email = req.body['sign-up-email'];
     res.redirect('/dashboard');
   });
@@ -60,8 +57,6 @@ app.get('/listings/new', (req, res) => {
 
 // this saves a new space to the database
 app.post('/listings/new', (req, res) => {
-  console.log("Hello")
-  console.log(req.session.userID);
   const listing = new Listing({
     name: req.body.name,
     description: req.body.description,
