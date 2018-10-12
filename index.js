@@ -60,9 +60,8 @@ app.post('/listings/new', (req, res) => {
   const listing = new Listing({
     name: req.body.name,
     description: req.body.description,
+    imageURL: req.body.imageURL,
     price: req.body.price,
-    startDate: req.body['start-date'],
-    endDate: req.body['end-date'],
     ownerID: req.session.userID,
   });
   listing.save().then(

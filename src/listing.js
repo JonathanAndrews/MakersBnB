@@ -8,6 +8,7 @@ mongoose.connect(
 const listingSchema = new mongoose.Schema({
   name: String,
   description: String,
+  imageURL: String,
   price: Number,
   ownerID: String,
   startDate: String,
