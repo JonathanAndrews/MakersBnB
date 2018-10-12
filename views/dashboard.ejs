@@ -4,6 +4,9 @@
 <form action="/listings/new">
   <button type="submit" name="add_space">Add New Space</button>
 </form>
+<form action="/listing/requests" method="get">
+  <button type="submit">Check Booking Requests</button>
+</form>
 <ul>
   <% let num = 1 %>
   <% listings.forEach(function(listing) { %>
