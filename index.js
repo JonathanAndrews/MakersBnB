@@ -75,6 +75,16 @@ app.post('/listings/new', (req, res) => {
   );
 });
 
+app.get('/listings/requests', (req, res) => {
+  Listing.find({}, (err, allListings) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('bookingRequests', { listings: allListings });
+    }
+  });
+});
+
 app.get('/listing/:id', (req, res) => {
   const listingId = req.params.id;
   Listing.findById(listingId, (err, listing) => {
@@ -121,6 +131,14 @@ app.post('/listing/:id/book', (req, res) => {
       res.redirect('/dashboard');
     }
   });
+});
+
+app.get('/approve', (req, res) => {
+  res.send('<h1>Approved Booking</h1>');
+});
+
+app.get('/deny', (req, res) => {
+  res.send('<h1>Denied Booking</h1>');
 });
 
 // Connecting to our localhost
