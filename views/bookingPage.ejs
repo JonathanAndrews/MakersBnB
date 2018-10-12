@@ -1,0 +1,9 @@
+<% include partials/header %>
+  <h1>Booking: <%= listing.name %></h1>
+  <p>Date: <%= new Date(Date.now()) %></p>
+  <form action="/listing/confirm" method="post">
+    <input type="date" min="2018-10-10" name="dateBooking">
+    <input type="submit" value="Submit">
+  </form>
+
+<% include partials/footer %>

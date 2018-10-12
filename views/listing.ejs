@@ -1,3 +1,6 @@
 <% include partials/header %> 
 <h1><%= listing.name %></h1>
+<form action="/listing/<%= listing.id %>/book" method="get">
+  <input type="submit" value="Book for a Night">
+</form>
 <% include partials/footer %>
