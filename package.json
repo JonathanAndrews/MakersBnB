@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/ spec/",
-    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
