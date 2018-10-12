@@ -35,7 +35,7 @@ At the start, the ones with the green ticks were ones we felt were key towards a
 - Understanding MongoDB and Mongoose
 - Using these tools to store and retrieve information from the database
 - Learning to test asynchronous code
-- Setting up node JS asd NPM
+- Setting up node JS and NPM
 - Setting up an Express app
 - Creating mongoose Schemas
 - Feature driven development of the website
