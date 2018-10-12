@@ -1,8 +1,10 @@
 <% include partials/header %>
+  <% const startDate = new Date(listing.startDate) %>
+  <% const endDate = new Date(listing.endDate) %>
   <h1>Booking: <%= listing.name %></h1>
-  <p>Date: <%= new Date(Date.now()) %></p>
+  <h2 id="available-date">Space's Available Date: <%= startDate.toDateString() %> - <%= endDate.toDateString() %></h2>
   <form action="/listing/confirm" method="post">
-    <input type="date" min="2018-10-10" name="dateBooking">
+    <input type="date" min="<%= listing.startDate %>" max="<%= listing.endDate %>" name="dateBooking">
     <input type="submit" value="Submit">
   </form>
 

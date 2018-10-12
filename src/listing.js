@@ -10,6 +10,8 @@ const listingSchema = new mongoose.Schema({
   description: String,
   price: Number,
   ownerID: String,
+  startDate: String,
+  endDate: String,
 });
 
 const Listing = mongoose.model('Listing', listingSchema);

@@ -8,7 +8,7 @@
   <% let num = 1 %>
   <% listings.forEach(function(listing) { %>
     <li class="listing-<%= num %>">
-      <span class="listing-<%= num %>-name"><%= listing.name %></span> - <%= listing.description %> - <a href="/listing/<%=listing.id%>" class="listing-<%= num %>">Book Now</a>
+      <span class="listing-<%= num %>-name"><%= listing.name %></span> - <%= listing.description %> - <a href="/listing/<%=listing.id%>" class="listing-<%= num %>-link">Book Now</a>
     </li>
     <% num++ %>
   <% }) %>
