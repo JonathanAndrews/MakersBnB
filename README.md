@@ -14,8 +14,8 @@ MongoDB
 Mongoose
 Zombie
 Jasmine
-HTML
-CSS
+EJS
+Skeleton
 
 ### User Stories
 At the beginning of the week, we were given a list of [headline specifications](https://github.com/makersacademy/course/blob/master/makersbnb/specification_and_mockups.md), which we used to create these user stories:
