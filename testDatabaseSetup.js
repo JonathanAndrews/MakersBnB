@@ -21,6 +21,7 @@ db.once('open', () => {
     ownerID: Number,
     startDate: String,
     endDate: String,
+    bookingRequest: [String],
   });
   const Listing = mongoose.model('Listing', listingSchema);
 
@@ -37,6 +38,7 @@ db.once('open', () => {
     ownerID: 25,
     startDate: '2019-07-05',
     endDate: '2019-10-04',
+    bookingRequest: [],
   });
   const dummyListing2 = new Listing({
     name: 'Camden loft',

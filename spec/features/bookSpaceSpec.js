@@ -53,8 +53,8 @@ describe('User will book a space', () => {
             browser.assert.success();
           });
 
-          it('should display the confirmation', () => {
-            browser.assert.text('span', 'Sun Nov 11 2018');
+          it('should return to dashboard', () => {
+            browser.assert.text('.listing-1-name', 'Westminster Flat');
           });
         });
       });
