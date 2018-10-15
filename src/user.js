@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb://admin:witty1@ds151348.mlab.com:51348/localhostdb',
+  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${
+    process.env.DB_HOST
+  }:51348/localhostdb`,
   { useNewUrlParser: true },
 );
 

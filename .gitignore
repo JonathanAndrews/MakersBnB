@@ -1,3 +1,4 @@
 .DS_Store
 domain-models/domain-models.bmpr
 node_modules
+variables.env

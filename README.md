@@ -102,6 +102,10 @@ At the start, the ones with the green ticks were ones we felt were key towards a
 
 **Alex:**
 
+It was genuinely a success. The greatest thing about the week was how well we worked together as a team and I truly believe we accomplished our primary goal which was to grow collaboratively. This was our driving force when working on this project. We developed a pretty good MVP and although haven't completed all our user stories, we were satisfied with the work we've created and I'm personally proud of how well we did.
+
+My accomplishments include being a good facilitator in our discussions, learning an entirely new tech stack from scratch, and working from the perspective of the process.
+
 **Jonathan:**
 
 There were two main challenges this week.
