@@ -8,7 +8,7 @@ const Listing = require('./src/listing');
 
 // Sets up Express App and Port:
 const app = express();
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Connecting to our Public folder
 app.use(express.static('public'));
