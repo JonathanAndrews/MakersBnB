@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb://localhost:27017/testDbMakersBNB',
+  'mongodb://admin:witty1@ds151348.mlab.com:51348/localhostdb',
   { useNewUrlParser: true },
 );
 
