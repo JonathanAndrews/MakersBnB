@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-require('dotenv').config();
+require('dotenv').load();
 // Our DB Models:
 const User = require('./src/user');
 const Listing = require('./src/listing');
