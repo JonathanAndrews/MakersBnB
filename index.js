@@ -8,7 +8,7 @@ const Listing = require('./src/listing');
 
 // Sets up Express App and Port:
 const app = express();
-const port = 3000;
+const PORT = process.env.port || 3000;
 
 // Connecting to our Public folder
 app.use(express.static('public'));
@@ -142,6 +142,6 @@ app.get('/deny', (req, res) => {
 });
 
 // Connecting to our localhost
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
 });
