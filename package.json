@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/ spec/",
-    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",

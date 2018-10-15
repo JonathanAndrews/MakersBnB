@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb://localhost:27017/testDbMakersBNB',
+  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${
+    process.env.DB_HOST
+  }:51348/localhostdb`,
   { useNewUrlParser: true },
 );
 
@@ -14,10 +16,6 @@ userSchema.add({ username: String });
 
 userSchema.statics.findByEmail = function (email, cb) {
   return this.find({ email: new RegExp(email, 'i') }, cb);
-};
-
-userSchema.statics.helloWorld = function () {
-  console.log('Hello world!');
 };
 
 const User = mongoose.model('User', userSchema);

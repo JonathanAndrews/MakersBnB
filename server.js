@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').load();
 
 mongoose.connect(
-  'mongodb://localhost:27017/testDbMakersBNB',
+  `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${
+    process.env.DB_HOST
+  }:51348/localhostdb`,
   { useNewUrlParser: true },
 );
 

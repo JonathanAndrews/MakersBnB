@@ -1,14 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-
+require('dotenv').load();
 // Our DB Models:
 const User = require('./src/user');
 const Listing = require('./src/listing');
 
 // Sets up Express App and Port:
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Connecting to our Public folder
 app.use(express.static('public'));
@@ -125,7 +125,7 @@ app.post('/listing/:id/book', (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      const requestDate = req.body['dateBooking'];
+      const requestDate = req.body.dateBooking;
       listing.bookingRequest.push(requestDate);
       listing.save();
       res.redirect('/dashboard');
@@ -142,6 +142,6 @@ app.get('/deny', (req, res) => {
 });
 
 // Connecting to our localhost
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
 });
