@@ -113,6 +113,7 @@ The first was understanding and using an unfamiliar tech stack. Having never use
 The second challenge was coding as a team. This meant we needed to be very specific about what each pair was working on and to communicate regularly, something we got better at over the week.
 
 **Ayo:**
+
 I think this week has proven very productive. Working in a group provides a new set of challenges along with the ones that the weekly challenge had, but I felt that we did very well to work as a group and help each other out in achieving our goals and tasks set by ourselves.
 
 Learning the new tech stack and being able to understand it at first proved challenging, but we took time to make sure that everyone did research on it and felt comfortable with it before using. Overall very happy with how the week went and felt we got stronger as a group with each day that went by.
